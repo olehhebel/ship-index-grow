@@ -7,9 +7,9 @@ const FOUNDING_PRICE='$490';
 
 /* Make the offer explicit everywhere. */
 const ctas=[...document.querySelectorAll('.js-open')];
-if(ctas[0])ctas[0].textContent=`Join cohort · ${FOUNDING_PRICE}`;
-if(ctas[1])ctas[1].innerHTML=`Reserve a seat · ${FOUNDING_PRICE} <span>↗</span>`;
-if(ctas[2])ctas[2].innerHTML=`Join founding cohort · ${FOUNDING_PRICE} <span>↗</span>`;
+if(ctas[0])ctas[0].textContent='Join the course';
+if(ctas[1])ctas[1].innerHTML='Join the course <span>↗</span>';
+if(ctas[2])ctas[2].innerHTML='Join the founding cohort <span>↗</span>';
 
 const heroMeta=[...document.querySelectorAll('.hero-meta span')];
 ['20 SEATS','6 LIVE WEEKS',`${FOUNDING_PRICE} FOUNDING PRICE`,'ONE PRODUCT PER STUDENT'].forEach((text,index)=>{if(heroMeta[index])heroMeta[index].textContent=text});
@@ -20,7 +20,7 @@ const proofLogos=[
   {host:'ridne.store',src:'https://raw.githubusercontent.com/olehhebel/ridne-marketplace/main/assets/ridne-logo-2026.webp',alt:'RIDNE logo'},
   {host:'superprompt.pro',src:'https://raw.githubusercontent.com/olehhebel/ai-superprompt-studio/index.html/assets/network/oleh-hebel-co-v2.png',alt:'Oleh Hebel & Co logo'}
 ];
-document.querySelectorAll('.proof-grid a').forEach(card=>{const logo=proofLogos.find(item=>card.href.includes(item.host));if(!logo)return;const wrap=document.createElement('span');wrap.className='project-logo-wrap';wrap.innerHTML=`<img class="project-logo" src="${logo.src}" alt="${logo.alt}" loading="lazy" decoding="async">`;card.appendChild(wrap)});
+document.querySelectorAll('.proof-grid a').forEach(card=>{const logo=proofLogos.find(item=>card.href.includes(item.host));if(!logo||card.querySelector('.project-logo-wrap'))return;const wrap=document.createElement('span');wrap.className='project-logo-wrap';wrap.innerHTML=`<img class="project-logo" src="${logo.src}" alt="${logo.alt}" loading="lazy" decoding="async">`;card.appendChild(wrap)});
 
 /* Cohort math: 20 seats means at least 20 real launches, not one. */
 const formatItems=[...document.querySelectorAll('.format-grid div')];
@@ -29,38 +29,41 @@ if(formatItems[1]){formatItems[1].querySelector('strong').textContent='6';format
 if(formatItems[2]){formatItems[2].querySelector('strong').textContent='20+';formatItems[2].querySelector('span').textContent='real products launched'}
 const formatNote=document.querySelector('.format-note');if(formatNote)formatNote.textContent=`Twenty people enter with twenty different ideas. Each participant leaves with a live product, its own domain, search-ready structure and a concrete growth plan. Founding cohort: ${FOUNDING_PRICE} for the full six-week program.`;
 
-/* Add the missing pricing objection directly to the FAQ. */
 const faqGrid=document.querySelector('.faq-grid');if(faqGrid&&!faqGrid.querySelector('[data-pricing-faq]')){const pricing=document.createElement('article');pricing.dataset.pricingFaq='true';pricing.innerHTML=`<h3>What does the founding cohort cost?</h3><p><strong>${FOUNDING_PRICE} total</strong> for six live weeks, product reviews, templates, SEO/GEO guidance and launch feedback. The first cohort is limited to 20 seats.</p>`;faqGrid.appendChild(pricing)}
 
 const finalCopy=document.querySelector('.final>p:not(.eyebrow)');if(finalCopy)finalCopy.textContent=`20 seats. Six live weeks. One real launch per participant. Founding cohort price: ${FOUNDING_PRICE}.`;
 
-/* Add a direct social proof/contact route without inventing another brand site. */
 const footer=document.querySelector('footer');if(footer&&!footer.querySelector('.footer-social')){const linkedin=document.createElement('a');linkedin.className='footer-link footer-social';linkedin.href='https://www.linkedin.com/in/olehhebel/';linkedin.target='_blank';linkedin.rel='noopener';linkedin.textContent='LinkedIn ↗';const copyright=footer.querySelector('span:last-child');footer.insertBefore(linkedin,copyright)}
 
-/* Replace the old multi-question application with a two-field commercial request. */
+/* Rebuild the cohort popup around a clear two-field join request. */
 const dialog=document.querySelector('#applyDialog');
 dialog.innerHTML=`
-  <button class="dialog-close" aria-label="Close order form">×</button>
+  <button class="dialog-close" type="button" aria-label="Close join form">×</button>
   <div class="dialog-copy">
-    <p class="eyebrow">FOUNDING COHORT · 20 SEATS</p>
-    <h2 id="dialogTitle">Ship your product in 6 weeks.</h2>
-    <p class="dialog-offer">Live product strategy, UX, AI-assisted build, SEO/GEO, launch reviews and automation — <strong>${FOUNDING_PRICE} total.</strong></p>
-    <div class="dialog-meta" aria-label="Founding cohort details"><span>6 LIVE WEEKS</span><span>20 SEATS</span><span>20+ REAL LAUNCHES</span></div>
+    <p class="eyebrow">SHIP INDEX GROW · FOUNDING COHORT</p>
+    <h2 id="dialogTitle">Ready to build something real?</h2>
+    <p class="dialog-offer">Join the six-week Ship Index Grow cohort and take one real product from idea to launch — product strategy, UX, AI build, SEO/GEO, growth and automation. <strong>${FOUNDING_PRICE} total.</strong></p>
+    <div class="dialog-meta" aria-label="Course details"><span>6 LIVE WEEKS</span><span>20 SEATS</span><span>YOUR PRODUCT GOES LIVE</span></div>
   </div>
   <form id="leadForm">
-    <input type="hidden" name="_subject" value="New Ship Index Grow founding cohort request">
+    <input type="hidden" name="_subject" value="SHIP INDEX GROW — NEW JOIN REQUEST">
     <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="offer" value="Ship Index Grow founding cohort — ${FOUNDING_PRICE}">
+    <input type="hidden" name="request_type" value="I want to join the Ship Index Grow founding cohort">
+    <input type="hidden" name="course" value="Ship Index Grow — 6-week founding cohort">
+    <input type="hidden" name="price" value="${FOUNDING_PRICE}">
     <label>Your name<input name="name" autocomplete="name" required placeholder="Your name"></label>
     <label>Your email<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
-    <button class="button" type="submit">Reserve my seat · ${FOUNDING_PRICE} <span>→</span></button>
-    <p class="dialog-price-note">No long application. Leave your name and email; you’ll receive cohort dates and payment details.</p>
+    <button class="button" type="submit">I want to join <span>→</span></button>
+    <p class="dialog-price-note">Two fields. No long application. You send the signal — I send the next step.</p>
     <p class="form-status" role="status" aria-live="polite"></p>
   </form>
-  <div class="dialog-proof"><span>SEE THE SYSTEM IN PUBLIC:</span><a href="https://superprompt.pro/" target="_blank" rel="noopener">Oleh Hebel & Co ↗</a><a href="https://interfacereport.com/" target="_blank" rel="noopener">Interface Report ↗</a><a href="https://ridne.store/" target="_blank" rel="noopener">RIDNE ↗</a><a href="https://www.linkedin.com/in/olehhebel/" target="_blank" rel="noopener">LinkedIn ↗</a></div>`;
+  <div class="dialog-proof"><span>BUILT IN PUBLIC:</span><a href="https://superprompt.pro/" target="_blank" rel="noopener">Oleh Hebel & Co ↗</a><a href="https://interfacereport.com/" target="_blank" rel="noopener">Interface Report ↗</a><a href="https://ridne.store/" target="_blank" rel="noopener">RIDNE ↗</a><a href="https://www.linkedin.com/in/olehhebel/" target="_blank" rel="noopener">LinkedIn ↗</a></div>`;
 
 const form=document.querySelector('#leadForm');const status=document.querySelector('.form-status');
-document.querySelectorAll('.js-open').forEach(button=>button.addEventListener('click',()=>dialog.showModal()));
+
+/* Event delegation keeps every current and future course CTA working. */
+document.addEventListener('click',event=>{const trigger=event.target.closest('.js-open');if(!trigger)return;event.preventDefault();if(typeof dialog.showModal==='function'){if(!dialog.open)dialog.showModal()}else{dialog.setAttribute('open','')}});
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
-form.addEventListener('submit',async event=>{event.preventDefault();const submit=form.querySelector('button[type="submit"]');submit.disabled=true;status.textContent='Sending…';try{const response=await fetch('https://formsubmit.co/ajax/doctorgebel@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});if(!response.ok)throw new Error('Request failed');form.reset();status.textContent='Request sent. Check your email for the next step.'}catch(error){status.textContent='Could not send right now. Email doctorgebel@gmail.com directly.'}finally{submit.disabled=false}});
+
+form.addEventListener('submit',async event=>{event.preventDefault();const submit=form.querySelector('button[type="submit"]');submit.disabled=true;status.textContent='Sending your join request…';try{const payload=Object.fromEntries(new FormData(form));const response=await fetch('https://formsubmit.co/ajax/doctorgebel@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});if(!response.ok)throw new Error('Request failed');form.reset();status.textContent='Request sent. I’ll email you with the cohort dates and next step.'}catch(error){status.textContent='Could not send right now. Email doctorgebel@gmail.com directly.'}finally{submit.disabled=false}});
