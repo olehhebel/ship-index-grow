@@ -1,0 +1,34 @@
+# Ship Index Grow
+
+> Ship Index Grow is a practical six-week AI-native product launch school. Students move from idea and product design through AI-assisted building, SEO/GEO, distribution, analytics and automation, leaving with a real deployed digital product.
+
+## Core pages
+
+- [Home](https://shipindexgrow.top/): Program overview, curriculum, pilot format and application.
+
+## Build path
+
+1. IDEA — validate the problem, audience, offer and launch hypothesis.
+2. PRODUCT — design the UX, prototype and coherent brand system.
+3. SHIP — build with AI, connect essentials, domain and deployment.
+4. INDEX — make the product understandable to search engines and answer engines with SEO, GEO, content and analytics.
+5. GROW — launch, outreach, acquisition and distribution.
+6. AUTOMATE — measure the launch and automate repeatable workflows with human approval.
+
+## Live project references
+
+- [Interface Report](https://interfacereport.com/) — media, SEO/GEO, editorial architecture and discoverability.
+- [RIDNE](https://ridne.store/) — marketplace UX, onboarding, trust and operations.
+- [SuperPrompt](https://superprompt.pro/) — positioning, productized services, conversion and lead generation.
+
+## Pilot format
+
+- Six live working weeks.
+- 15–20 students maximum.
+- One real product launched per participant.
+- Recordings, templates, community, product reviews and direct founder involvement are planned for the pilot.
+
+## Contact
+
+- Website: https://shipindexgrow.top/
+- Email: doctorgebel@gmail.com
