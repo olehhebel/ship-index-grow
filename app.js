@@ -41,13 +41,12 @@ dialog.innerHTML=`
     <div class="dialog-meta" aria-label="Course details"><span>6 LIVE WEEKS</span><span>20 SEATS</span><span>YOUR PRODUCT GOES LIVE</span></div>
   </div>
   <form id="leadForm">
-    <input type="hidden" name="_subject" value="SHIP INDEX GROW — NEW JOIN REQUEST">
-    <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="request_type" value="I want to join the Ship Index Grow founding cohort">
     <input type="hidden" name="course" value="Ship Index Grow — 6-week founding cohort">
     <input type="hidden" name="price" value="${FOUNDING_PRICE}">
-    <label>Your name<input name="name" autocomplete="name" required placeholder="Your name"></label>
-    <label>Your email<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+    <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+    <label>Your name<input name="name" autocomplete="name" required maxlength="120" placeholder="Your name"></label>
+    <label>Your email<input name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@example.com"></label>
     <button class="button" type="submit">I want to join <span>→</span></button>
     <p class="dialog-price-note">Two fields. No long application. You send the signal — I send the next step.</p>
     <p class="form-status" role="status" aria-live="polite"></p>
@@ -59,4 +58,4 @@ document.addEventListener('click',event=>{const trigger=event.target.closest('.j
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
 
-form.addEventListener('submit',async event=>{event.preventDefault();const submit=form.querySelector('button[type="submit"]');submit.disabled=true;status.textContent='Sending your join request…';try{const payload=Object.fromEntries(new FormData(form));const response=await fetch('https://formsubmit.co/ajax/doctorgebel@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});if(!response.ok)throw new Error('Request failed');form.reset();status.textContent='Request sent. I’ll email you with the cohort dates and next step.'}catch(error){status.textContent='Could not send right now. Email doctorgebel@gmail.com directly.'}finally{submit.disabled=false}});
+form.addEventListener('submit',async event=>{event.preventDefault();const submit=form.querySelector('button[type="submit"]');submit.disabled=true;status.textContent='Sending your join request…';try{const payload=Object.fromEntries(new FormData(form));payload.source=window.location.href;const response=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});const result=await response.json().catch(()=>({}));if(!response.ok||!result.ok)throw new Error(result.error||'Request failed');form.reset();status.textContent='Request sent. I’ll contact you with the cohort dates and next step.'}catch(error){console.error(error);status.textContent='Could not send right now. Please try again in a moment.'}finally{submit.disabled=false}});
