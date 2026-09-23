@@ -59,4 +59,27 @@ document.addEventListener('click',event=>{const trigger=event.target.closest('.j
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
 
-form.addEventListener('submit',async event=>{event.preventDefault();const submit=form.querySelector('button[type="submit"]');submit.disabled=true;status.textContent='Sending your join request…';try{const payload=Object.fromEntries(new FormData(form));const response=await fetch('https://formsubmit.co/ajax/doctorgebel@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});if(!response.ok)throw new Error('Request failed');form.reset();status.textContent='Request sent. I’ll email you with the cohort dates and next step.'}catch(error){status.textContent='Could not send right now. Email doctorgebel@gmail.com directly.'}finally{submit.disabled=false}});
+form.addEventListener('submit',async event=>{
+  event.preventDefault();
+  const submit=form.querySelector('button[type="submit"]');
+  submit.disabled=true;
+  status.textContent='Sending your join request…';
+  try{
+    const payload=Object.fromEntries(new FormData(form));
+    payload._url=window.location.href;
+    const response=await fetch('https://formsubmit.co/ajax/doctorgebel@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(payload)
+    });
+    const result=await response.json();
+    if(!response.ok||result.success!==true&&result.success!=='true')throw new Error(result.message||'Request failed');
+    form.reset();
+    status.textContent='Request sent. I’ll email you with the cohort dates and next step.';
+  }catch(error){
+    console.error('Join request failed',error);
+    status.textContent='Could not send right now. Email doctorgebel@gmail.com directly.';
+  }finally{
+    submit.disabled=false;
+  }
+});
