@@ -1,34 +1,28 @@
 # Ship Index Grow
 
-> Ship Index Grow is a practical six-week AI-native product launch school. Students move from idea and product design through AI-assisted building, SEO/GEO, distribution, analytics and automation, leaving with a real deployed digital product.
+> A practical six-week product launch school: AI-assisted development, UX, SEO/GEO, distribution and automation. Founding cohort: 20 participants. Each participant works on their own digital product. Enrollment dates are confirmed by email; submitting the form does not take payment.
 
-## Core pages
+## Language versions
+- [English](https://shipindexgrow.top/): Program, six-week curriculum, projects, format, pricing and application.
+- [Українська](https://shipindexgrow.top/uk): Практична онлайн-школа створення продуктів із ШІ, UX, SEO/GEO, просування та автоматизації. Від ідеї до власного запущеного продукту.
 
-- [Home](https://shipindexgrow.top/): Program overview, curriculum, pilot format and application.
+## Pricing
+- English: USD 490 for the complete six-week program.
+- Ukrainian: UAH 21,968; rounded equivalent of USD 490 at the NBU rate of 44.8333 UAH/USD on 2026-10-02. This is a dated conversion, not a live exchange-rate feed.
 
-## Build path
+## Curriculum
+1. Validate idea, audience and value proposition.
+2. Design UX, prototype and brand system.
+3. Build with AI and deploy on a domain.
+4. Prepare SEO/GEO, content and analytics.
+5. Plan distribution, outreach and acquisition.
+6. Automate repeatable workflows with human oversight.
 
-1. IDEA — validate the problem, audience, offer and launch hypothesis.
-2. PRODUCT — design the UX, prototype and coherent brand system.
-3. SHIP — build with AI, connect essentials, domain and deployment.
-4. INDEX — make the product understandable to search engines and answer engines with SEO, GEO, content and analytics.
-5. GROW — launch, outreach, acquisition and distribution.
-6. AUTOMATE — measure the launch and automate repeatable workflows with human approval.
-
-## Live project references
-
-- [Interface Report](https://interfacereport.com/) — media, SEO/GEO, editorial architecture and discoverability.
-- [RIDNE](https://ridne.store/) — marketplace UX, onboarding, trust and operations.
-- [SuperPrompt](https://superprompt.pro/) — positioning, productized services, conversion and lead generation.
-
-## Pilot format
-
-- Six live working weeks.
-- 15–20 students maximum.
-- One real product launched per participant.
-- Recordings, templates, community, product reviews and direct founder involvement are planned for the pilot.
+## Live case studies
+- [Interface Report](https://interfacereport.com/): Editorial architecture and discoverability.
+- [RIDNE](https://ridne.store/): Marketplace UX, trust and operations.
+- [SuperPrompt](https://superprompt.pro/): Productized services, conversion and lead generation.
 
 ## Contact
-
-- Website: https://shipindexgrow.top/
 - Email: doctorgebel@gmail.com
+- [Founder LinkedIn](https://www.linkedin.com/in/olehhebel/)
