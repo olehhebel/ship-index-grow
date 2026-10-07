@@ -31,6 +31,7 @@ pkill -f "x11vnc.*:99" >/dev/null 2>&1 || true
 pkill -f "websockify.*6080" >/dev/null 2>&1 || true
 pkill -f "playwright-mcp" >/dev/null 2>&1 || true
 pkill -f "remote-debugging-port=9222" >/dev/null 2>&1 || true
+rm -f "$PROFILE_DIR/SingletonLock" "$PROFILE_DIR/SingletonCookie" "$PROFILE_DIR/SingletonSocket" "$PROFILE_DIR/DevToolsActivePort"
 sleep 1
 
 x11vnc -storepasswd "$VNC_PASSWORD" "$VNC_DIR/passwd" >/dev/null
