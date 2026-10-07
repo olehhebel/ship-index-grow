@@ -1,0 +1,10 @@
+{
+  "name": "oleh-cloud-browser",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Persistent Playwright MCP + noVNC orchestration for the Oleh Hebel project ecosystem",
+  "dependencies": {
+    "@playwright/mcp": "0.0.83",
+    "playwright": "1.63.0"
+  }
+}
