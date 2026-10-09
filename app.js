@@ -5,6 +5,28 @@ document.addEventListener('click',event=>{const trigger=event.target.closest('.j
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
 
+// Leads go to Telegram via /api/lead. If that endpoint is unavailable
+// (not configured yet, Telegram down, or a host without functions), fall back to email.
+async function postJson(url,payload){
+  const response=await fetch(url,{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify(payload)
+  });
+  return {response,result:await response.json().catch(()=>({}))};
+}
+async function sendLead(payload){
+  try{
+    const {response,result}=await postJson('/api/lead',payload);
+    if(response.ok&&result.ok===true)return;
+    throw new Error(result.error||'Lead endpoint failed');
+  }catch(error){
+    console.warn('Telegram lead delivery failed, using email fallback',error);
+  }
+  const {response,result}=await postJson('https://formsubmit.co/ajax/doctorgebel@gmail.com',payload);
+  if(!response.ok||result.success!==true&&result.success!=='true')throw new Error(result.message||'Request failed');
+}
+
 form.addEventListener('submit',async event=>{
   event.preventDefault();
   const submit=form.querySelector('button[type="submit"]');
@@ -13,13 +35,7 @@ form.addEventListener('submit',async event=>{
   try{
     const payload=Object.fromEntries(new FormData(form));
     payload._url=window.location.href;
-    const response=await fetch('https://formsubmit.co/ajax/doctorgebel@gmail.com',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(payload)
-    });
-    const result=await response.json();
-    if(!response.ok||result.success!==true&&result.success!=='true')throw new Error(result.message||'Request failed');
+    await sendLead(payload);
     form.reset();
     status.textContent=uk?'Заявку надіслано. Напишемо на твою пошту з датами та наступним кроком.':'Request sent. We’ll email you with the cohort dates and next step.';
   }catch(error){

@@ -26,12 +26,19 @@ export default async function handler(req, res) {
     return res.status(503).json({ ok: false, error: 'Lead delivery is not configured' });
   }
 
-  const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+  let body = req.body || {};
+  if (typeof body === 'string') {
+    try {
+      body = JSON.parse(body || '{}');
+    } catch {
+      return res.status(400).json({ ok: false, error: 'Invalid JSON' });
+    }
+  }
   const name = clean(body.name);
   const email = clean(body.email);
-  const website = clean(body.website);
+  const honeypot = clean(body._honey || body.website);
 
-  if (website) {
+  if (honeypot) {
     return res.status(200).json({ ok: true });
   }
 
@@ -41,8 +48,9 @@ export default async function handler(req, res) {
 
   const requestType = clean(body.request_type || 'Ship Index Grow join request');
   const course = clean(body.course || 'Ship Index Grow');
-  const price = clean(body.price || '$490');
-  const source = clean(body.source || req.headers.referer || 'shipindexgrow.top');
+  const price = clean(body.price || '—');
+  const language = clean(body.language || '—');
+  const source = clean(body._url || body.source || req.headers.referer || 'shipindexgrow.top');
   const submittedAt = new Date().toISOString();
 
   const text = [
@@ -53,6 +61,7 @@ export default async function handler(req, res) {
     `🎓 <b>Request:</b> ${escapeHtml(requestType)}`,
     `📦 <b>Course:</b> ${escapeHtml(course)}`,
     `💳 <b>Price:</b> ${escapeHtml(price)}`,
+    `🌐 <b>Language:</b> ${escapeHtml(language)}`,
     `🔗 <b>Source:</b> ${escapeHtml(source)}`,
     `🕒 <b>Time:</b> ${escapeHtml(submittedAt)}`
   ].join('\n');
