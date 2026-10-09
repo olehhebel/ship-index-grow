@@ -23,6 +23,16 @@
 - [RIDNE](https://ridne.store/): Marketplace UX, trust and operations.
 - [SuperPrompt](https://superprompt.pro/): Productized services, conversion and lead generation.
 
+## Blog (English)
+- [How to Build and Launch a Product with AI in 6 Weeks](https://shipindexgrow.top/blog/build-and-launch-a-product-with-ai/): Week-by-week plan from idea to a live, indexed product with AI coding tools.
+- [GEO in 2026: How to Get Cited by ChatGPT, Perplexity and Google AI](https://shipindexgrow.top/blog/geo-get-cited-by-ai-search/): Generative engine optimization checklist.
+- [AI Agents for Solo Founders](https://shipindexgrow.top/blog/ai-agents-automation-for-solo-founders/): What to automate after launch, with a human in the loop.
+
+## Блог (українською)
+- [Як створити й запустити продукт із ШІ за 6 тижнів](https://shipindexgrow.top/blog/uk/yak-stvoryty-produkt-z-shi/): Покроковий план запуску власного продукту.
+- [GEO-оптимізація у 2026](https://shipindexgrow.top/blog/uk/geo-optymizatsiya-shi-poshuk/): Як потрапити у відповіді ChatGPT, Perplexity та Google.
+- [ШІ-агенти для малого бізнесу](https://shipindexgrow.top/blog/uk/shi-agenty-avtomatyzatsiya-biznesu/): Що автоматизувати після запуску, а що ні.
+
 ## Contact
 - Email: doctorgebel@gmail.com
 - [Founder LinkedIn](https://www.linkedin.com/in/olehhebel/)
