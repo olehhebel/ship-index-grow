@@ -5,25 +5,26 @@ document.addEventListener('click',event=>{const trigger=event.target.closest('.j
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
 
-// Leads go to Telegram via /api/lead. If that endpoint is unavailable
-// (not configured yet, Telegram down, or a host without functions), fall back to email.
-async function postJson(url,payload){
-  const response=await fetch(url,{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify(payload)
-  });
+// Telegram relay (Google Apps Script web app, see tools/telegram-leads).
+// Leave empty to send join requests by email only.
+const TELEGRAM_RELAY_URL='';
+
+async function postJson(url,payload,headers){
+  const response=await fetch(url,{method:'POST',headers,body:JSON.stringify(payload)});
   return {response,result:await response.json().catch(()=>({}))};
 }
 async function sendLead(payload){
-  try{
-    const {response,result}=await postJson('/api/lead',payload);
-    if(response.ok&&result.ok===true)return;
-    throw new Error(result.error||'Lead endpoint failed');
-  }catch(error){
-    console.warn('Telegram lead delivery failed, using email fallback',error);
+  if(TELEGRAM_RELAY_URL){
+    try{
+      // text/plain keeps this a simple request, which Apps Script accepts cross-origin.
+      const {response,result}=await postJson(TELEGRAM_RELAY_URL,payload,{'Content-Type':'text/plain;charset=utf-8'});
+      if(response.ok&&result.ok===true)return;
+      throw new Error(result.error||'Telegram relay failed');
+    }catch(error){
+      console.warn('Telegram lead delivery failed, using email fallback',error);
+    }
   }
-  const {response,result}=await postJson('https://formsubmit.co/ajax/doctorgebel@gmail.com',payload);
+  const {response,result}=await postJson('https://formsubmit.co/ajax/doctorgebel@gmail.com',payload,{'Content-Type':'application/json','Accept':'application/json'});
   if(!response.ok||result.success!==true&&result.success!=='true')throw new Error(result.message||'Request failed');
 }
 
