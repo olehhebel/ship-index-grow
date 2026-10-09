@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ship Index Grow — Blog</title>
+    <link>https://shipindexgrow.top/blog/</link>
+    <atom:link href="https://shipindexgrow.top/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Practical guides on building products with AI, getting found in Google and AI search (SEO/GEO), launching and automating growth. From the Ship Index Grow school.</description>
+    <language>en</language>
+    <item>
+      <title>How to Build and Launch a Product with AI in 6 Weeks: The 2026 Playbook</title>
+      <link>https://shipindexgrow.top/blog/build-and-launch-a-product-with-ai/</link>
+      <guid isPermaLink="true">https://shipindexgrow.top/blog/build-and-launch-a-product-with-ai/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <description>A week-by-week plan to go from idea to a live, indexed product with AI coding tools: validation, UX, AI-assisted build, deploy, SEO/GEO and first users.</description>
+    </item>
+    <item>
+      <title>GEO in 2026: How to Get Your Product Cited by ChatGPT, Perplexity and Google AI</title>
+      <link>https://shipindexgrow.top/blog/geo-get-cited-by-ai-search/</link>
+      <guid isPermaLink="true">https://shipindexgrow.top/blog/geo-get-cited-by-ai-search/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Generative engine optimization explained: how AI search picks sources, and a practical checklist to make your site crawlable, quotable and cited by AI assistants.</description>
+    </item>
+    <item>
+      <title>AI Agents for Solo Founders: What to Automate After Launch, and What Not To</title>
+      <link>https://shipindexgrow.top/blog/ai-agents-automation-for-solo-founders/</link>
+      <guid isPermaLink="true">https://shipindexgrow.top/blog/ai-agents-automation-for-solo-founders/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <description>A practical guide to AI agents and workflow automation for small products: which tasks to automate first, how to keep a human in the loop, and free tools to start with.</description>
+    </item>
+  </channel>
+</rss>

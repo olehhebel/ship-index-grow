@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ship Index Grow — Блог</title>
+    <link>https://shipindexgrow.top/blog/uk/</link>
+    <atom:link href="https://shipindexgrow.top/blog/uk/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Практичні гайди українською: як створити продукт із ШІ, потрапити в Google та ШІ-пошук (SEO/GEO), запуститися й автоматизувати просування. Від школи Ship Index Grow.</description>
+    <language>uk</language>
+    <item>
+      <title>Як створити й запустити продукт із ШІ за 6 тижнів: покроковий план на 2026 рік</title>
+      <link>https://shipindexgrow.top/blog/uk/yak-stvoryty-produkt-z-shi/</link>
+      <guid isPermaLink="true">https://shipindexgrow.top/blog/uk/yak-stvoryty-produkt-z-shi/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Покроковий план запуску власного продукту з ШІ: перевірка ідеї, UX, створення сайту чи застосунку з ШІ, домен, SEO/GEO і перші клієнти. Без навичок програмування.</description>
+    </item>
+    <item>
+      <title>GEO-оптимізація у 2026: як потрапити у відповіді ChatGPT, Perplexity та Google</title>
+      <link>https://shipindexgrow.top/blog/uk/geo-optymizatsiya-shi-poshuk/</link>
+      <guid isPermaLink="true">https://shipindexgrow.top/blog/uk/geo-optymizatsiya-shi-poshuk/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Що таке GEO (generative engine optimization), як ШІ-пошук обирає джерела і практичний чек-лист, щоб твій сайт індексували, цитували й рекомендували ШІ-асистенти.</description>
+    </item>
+    <item>
+      <title>ШІ-агенти для малого бізнесу: що автоматизувати після запуску, а що — ні</title>
+      <link>https://shipindexgrow.top/blog/uk/shi-agenty-avtomatyzatsiya-biznesu/</link>
+      <guid isPermaLink="true">https://shipindexgrow.top/blog/uk/shi-agenty-avtomatyzatsiya-biznesu/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Практичний гайд з ШІ-агентів і автоматизації для невеликого продукту чи бізнесу: що автоматизувати першим, як залишити контроль людині та з яких безкоштовних інструментів почати.</description>
+    </item>
+  </channel>
+</rss>

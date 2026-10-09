@@ -1,5 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://shipindexgrow.top/</loc><lastmod>2026-10-02</lastmod></url>
-  <url><loc>https://shipindexgrow.top/uk</loc><lastmod>2026-10-02</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://shipindexgrow.top/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shipindexgrow.top/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shipindexgrow.top/uk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shipindexgrow.top/"/>
+  </url>
+  <url>
+    <loc>https://shipindexgrow.top/uk</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shipindexgrow.top/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shipindexgrow.top/uk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shipindexgrow.top/"/>
+  </url>
+  <url>
+    <loc>https://shipindexgrow.top/blog/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shipindexgrow.top/blog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shipindexgrow.top/blog/uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shipindexgrow.top/blog/"/>
+  </url>
+  <url>
+    <loc>https://shipindexgrow.top/blog/uk/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shipindexgrow.top/blog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shipindexgrow.top/blog/uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shipindexgrow.top/blog/"/>
+  </url>
+  <url>
+    <loc>https://shipindexgrow.top/blog/ai-agents-automation-for-solo-founders/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shipindexgrow.top/blog/ai-agents-automation-for-solo-founders/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shipindexgrow.top/blog/uk/shi-agenty-avtomatyzatsiya-biznesu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shipindexgrow.top/blog/ai-agents-automation-for-solo-founders/"/>
+  </url>
+  <url>
+    <loc>https://shipindexgrow.top/blog/build-and-launch-a-product-with-ai/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shipindexgrow.top/blog/build-and-launch-a-product-with-ai/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shipindexgrow.top/blog/uk/yak-stvoryty-produkt-z-shi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shipindexgrow.top/blog/build-and-launch-a-product-with-ai/"/>
+  </url>
+  <url>
+    <loc>https://shipindexgrow.top/blog/geo-get-cited-by-ai-search/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shipindexgrow.top/blog/geo-get-cited-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shipindexgrow.top/blog/uk/geo-optymizatsiya-shi-poshuk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shipindexgrow.top/blog/geo-get-cited-by-ai-search/"/>
+  </url>
+  <url>
+    <loc>https://shipindexgrow.top/blog/uk/geo-optymizatsiya-shi-poshuk/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shipindexgrow.top/blog/geo-get-cited-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shipindexgrow.top/blog/uk/geo-optymizatsiya-shi-poshuk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shipindexgrow.top/blog/geo-get-cited-by-ai-search/"/>
+  </url>
+  <url>
+    <loc>https://shipindexgrow.top/blog/uk/shi-agenty-avtomatyzatsiya-biznesu/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shipindexgrow.top/blog/ai-agents-automation-for-solo-founders/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shipindexgrow.top/blog/uk/shi-agenty-avtomatyzatsiya-biznesu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shipindexgrow.top/blog/ai-agents-automation-for-solo-founders/"/>
+  </url>
+  <url>
+    <loc>https://shipindexgrow.top/blog/uk/yak-stvoryty-produkt-z-shi/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shipindexgrow.top/blog/build-and-launch-a-product-with-ai/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shipindexgrow.top/blog/uk/yak-stvoryty-produkt-z-shi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shipindexgrow.top/blog/build-and-launch-a-product-with-ai/"/>
+  </url>
 </urlset>
