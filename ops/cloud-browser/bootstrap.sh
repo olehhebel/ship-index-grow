@@ -11,6 +11,9 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y \
   dbus-x11 \
   curl
 
+# Install Chromium where start-browser.sh looks for it, even when run via sudo.
+export PLAYWRIGHT_BROWSERS_PATH=/vercel/.cache/ms-playwright
+
 npm install
 npx playwright install chromium
 npx playwright install-deps chromium

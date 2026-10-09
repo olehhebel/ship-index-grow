@@ -29,7 +29,7 @@ This setup is intentionally thin and reuses maintained upstream projects instead
 - `noVNC/noVNC` — browser-based VNC client
 - `LibVNC/x11vnc` — X11 VNC bridge
 
-The runtime scripts in this directory are project-specific orchestration only.
+The runtime scripts in this directory are project-specific orchestration only. Licenses and attribution are in [NOTICE.md](NOTICE.md).
 
 ## Runtime layout
 
@@ -52,6 +52,8 @@ cd ops/cloud-browser
 sudo ./bootstrap.sh
 VNC_PASSWORD='<temporary-password>' ./start-browser.sh
 ```
+
+`bootstrap.sh` installs Chromium into `/vercel/.cache/ms-playwright`. A Chrome installed earlier with `npx -y @puppeteer/browsers install chrome@stable --path /vercel/.cache/chrome` is also found. To point at a specific binary, set `CHROME` (or the older `CHROME_PATH`).
 
 After services are authenticated, snapshot/stop the Vercel Sandbox. Resume it only when automation is needed. This avoids leaving a logged-in browser continuously exposed.
 

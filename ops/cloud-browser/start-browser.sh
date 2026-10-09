@@ -14,7 +14,7 @@ if [[ -z "${VNC_PASSWORD:-}" ]]; then
   exit 1
 fi
 
-CHROME="${CHROME:-}"
+CHROME="${CHROME:-${CHROME_PATH:-}}"
 if [[ -z "$CHROME" ]]; then
   CHROME="$(find /vercel/.cache/chrome/chrome /vercel/.cache/ms-playwright -type f -path '*/chrome-linux64/chrome' 2>/dev/null | sort | tail -1 || true)"
 fi
