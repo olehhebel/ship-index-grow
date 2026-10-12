@@ -1,0 +1,71 @@
+<!--
+{
+  "title": "Security Checklist Before You Launch an AI-Built App",
+  "seo_title": "AI-Built App Security Checklist: 12 Checks Before Launch (2026)",
+  "description": "AI coding tools ship fast and leak secrets just as fast. A plain-language security checklist for vibe-coded apps: API keys, database access rules, auth, payments, forms and backups.",
+  "lead": "AI assistants write working code, not necessarily safe code. Leaked API keys, open databases and admin pages anyone can reach are among the most common problems in apps built quickly with AI. Twelve checks catch most of them before strangers do.",
+  "published": "2026-10-12",
+  "section": "Ship",
+  "order": 2,
+  "translation": "bezpeka-zastosunku-z-shi",
+  "keywords": ["vibe coding security", "AI generated code security", "exposed API keys", "Supabase RLS", "secure MVP checklist", "app security before launch"],
+  "faq": [
+    ["Is code written by AI insecure?", "Not by definition, but AI assistants optimize for code that runs, and they often take shortcuts such as putting keys in the frontend or skipping access rules unless you ask. Review security explicitly, as you would with any fast junior developer."],
+    ["Where should API keys go in a web app?", "Secret keys belong on a server, in a serverless function or in your hosting provider's secret settings, never in frontend code or a public repository. Only keys designed to be public, such as a publishable or anon key protected by database rules, may appear in the browser."],
+    ["What is row level security?", "Row level security (RLS) is a database feature, used by Supabase and PostgreSQL, that decides which rows each user may read or change. Without it, anyone who has your public database key can often read or modify all data."],
+    ["What should I do if I leaked an API key?", "Revoke or rotate the key immediately in the provider's dashboard, then remove it from the code. Deleting the commit is not enough, because the key stays in Git history and may already be copied."]
+  ]
+}
+-->
+<p>Speed is the point of building with AI. But the same speed that gets a product live in a weekend also gets secrets into public repositories and databases onto the open internet. Security researchers and founders keep finding the same handful of mistakes in AI-built apps. The fixes are not hard; they just are not automatic.</p>
+<p>This is a plain-language checklist for founders who are not security engineers. It does not replace a professional audit for apps that handle money or sensitive data, but it closes the most common holes.</p>
+
+<h2 id="secrets">1–3. Secrets and API keys</h2>
+<ol>
+  <li><strong>No secret keys in frontend code.</strong> Anything shipped to the browser is public. Search your built JavaScript for strings like <code>sk_</code>, <code>secret</code>, <code>service_role</code> and <code>api_key</code>. Secret keys go into a server or serverless function and are read from environment variables.</li>
+  <li><strong>No secrets in Git.</strong> Add <code>.env</code> to <code>.gitignore</code> before your first commit. GitHub's free secret scanning and push protection help catch mistakes in public repositories.</li>
+  <li><strong>Rotate anything that leaked.</strong> If a key was ever committed or shipped, revoke it and create a new one. Removing it from the latest commit does not remove it from history.</li>
+</ol>
+
+<h2 id="database">4–5. Database access rules</h2>
+<ol start="4">
+  <li><strong>Turn on access rules for every table.</strong> Hosted databases such as Supabase and Firebase are designed to be called from the browser with a public key; the protection is in the rules. In Supabase that means enabling row level security on each table and writing policies; in Firebase it means security rules that are not set to allow everything.</li>
+  <li><strong>Test as a stranger.</strong> Open your app in a private window, sign up as a new user and try to read or change another user's data by changing an ID in a request. If it works, your rules are wrong.</li>
+</ol>
+
+<!--cta-->
+
+<h2 id="auth">6–8. Authentication and admin</h2>
+<ol start="6">
+  <li><strong>Check permissions on the server, not only in the UI.</strong> Hiding an admin button is not protection. Every request that changes data must verify who is asking.</li>
+  <li><strong>No secret admin URLs.</strong> An unlinked <code>/admin</code> page is found quickly. Put it behind real login and role checks.</li>
+  <li><strong>Use a proven auth provider</strong> instead of a hand-rolled password system. Most hosted databases and frameworks include one for free.</li>
+</ol>
+
+<h2 id="inputs">9–10. Forms, uploads and payments</h2>
+<ol start="9">
+  <li><strong>Treat every input as hostile.</strong> Validate on the server, limit sizes and file types for uploads, and add basic spam protection and rate limits to public forms.</li>
+  <li><strong>Let the payment provider handle cards.</strong> Use hosted checkout pages and verify payment webhooks with their signature. Never decide that an order is paid based only on what the browser says.</li>
+</ol>
+
+<h2 id="operations">11–12. Updates and backups</h2>
+<ol start="11">
+  <li><strong>Keep dependencies updated.</strong> Turn on free automated dependency alerts and update regularly; AI assistants sometimes suggest outdated packages.</li>
+  <li><strong>Have a backup and a way back.</strong> Know how to restore your database and roll back to the previous deploy. Test it once before you need it.</li>
+</ol>
+
+<h2 id="ask-ai">Make the AI review its own work</h2>
+<p>AI assistants are good reviewers when asked directly. After each feature, ask: "Review this change for security problems: exposed secrets, missing authorization checks, unsafe input handling, and database access rules. List concrete issues with file and line." Then verify each issue yourself. Asking for security up front ("store the key server-side, enable access rules") prevents most problems in the first place.</p>
+
+<h2 id="checklist">The launch security checklist</h2>
+<ul class="checklist">
+  <li>No secret keys in frontend code or Git history</li>
+  <li>Leaked keys rotated</li>
+  <li>Access rules enabled and tested on every table</li>
+  <li>Permissions checked on the server for every write</li>
+  <li>Admin area behind real authentication</li>
+  <li>Server-side validation, upload limits and form spam protection</li>
+  <li>Hosted checkout and verified payment webhooks</li>
+  <li>Dependency alerts on, backup and rollback tested</li>
+</ul>
+<p>In the Ship Index Grow program, week three covers building with AI and deploying safely on your own domain. Read the full path in <a href="../build-and-launch-a-product-with-ai/">how to build and launch a product with AI in six weeks</a>.</p>

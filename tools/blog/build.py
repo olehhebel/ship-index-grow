@@ -499,7 +499,7 @@ def update_home(lang, posts):
     eyebrow, title = HOME_BLOCK[lang]
     cards = "".join(
         f'<a href="{p["path"].lstrip("/")}"><span>{esc(p.get("section", t["blog"])).upper()}</span><h3>{esc(p["title"])}</h3><i>{t["read"]} →</i></a>'
-        for p in posts if p["lang"] == lang
+        for p in [p for p in posts if p["lang"] == lang][:3]
     )
     block = (
         f'<!--blog:start--><section class="section home-blog" id="blog"><div class="section-head"><p class="eyebrow">{eyebrow}</p>'
