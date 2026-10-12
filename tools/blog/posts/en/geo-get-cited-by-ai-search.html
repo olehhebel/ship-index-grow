@@ -1,0 +1,86 @@
+<!--
+{
+  "title": "GEO in 2026: How to Get Your Product Cited by ChatGPT, Perplexity and Google AI",
+  "seo_title": "GEO 2026: Get Cited by ChatGPT, Perplexity & Google AI Overviews",
+  "description": "Generative engine optimization explained: how AI search picks sources, and a practical checklist to make your site crawlable, quotable and cited by AI assistants.",
+  "lead": "More people now ask an AI assistant before they open a search results page. If your product is not in the answer, it is not in the consideration set. Generative engine optimization (GEO) is how you get there, and most of it is solid SEO done properly.",
+  "published": "2026-10-09",
+  "section": "SEO / GEO",
+  "order": 2,
+  "translation": "geo-optymizatsiya-shi-poshuk",
+  "keywords": ["GEO", "generative engine optimization", "AI search optimization", "get cited by ChatGPT", "Perplexity SEO", "Google AI Overviews", "llms.txt", "IndexNow"],
+  "faq": [
+    ["What is GEO (generative engine optimization)?", "GEO is the practice of making your content easy for AI assistants and AI search features to find, understand, trust and cite. It builds on SEO: crawlable pages, clear structure and authority, plus content written as direct, quotable answers."],
+    ["Is GEO different from SEO?", "It overlaps heavily. AI answers are usually grounded in pages that search engines and AI crawlers have indexed, so technical SEO still comes first. GEO adds a focus on answer-shaped content, entity clarity, structured data and mentions of your brand on other trusted sites."],
+    ["Do I need an llms.txt file?", "It is optional. llms.txt is a proposed convention that gives AI tools a short, clean summary of your site. It costs nothing to add and can help some tools, but no major search engine has said it uses it for ranking, so do not expect it to replace sitemaps and good pages."],
+    ["How do I know if AI assistants cite my site?", "Ask the assistants the questions your customers ask and record which sources appear. Also watch referral traffic from chatgpt.com, perplexity.ai and similar domains in your analytics, and check Bing Webmaster Tools and Google Search Console for impressions on question-style queries."]
+  ]
+}
+-->
+<p>Search used to end with ten blue links. Now it often ends with a paragraph written by an AI, followed by a handful of cited sources. Google shows AI Overviews and AI Mode, ChatGPT and Perplexity answer with linked citations, and assistants recommend tools by name. Being one of those few sources is the new page one.</p>
+<p>The good news for small products: AI answers reward clarity and specificity more than domain size. A focused page that answers one question well can be cited next to much bigger brands.</p>
+
+<h2 id="how-ai-search-chooses-sources">How AI search chooses its sources</h2>
+<p>Exact algorithms are private, but the overall pipeline is consistent across assistants:</p>
+<ol>
+  <li><strong>Retrieval.</strong> The assistant searches an index (its own crawler's or a search engine's) for pages related to the question.</li>
+  <li><strong>Selection.</strong> It keeps pages that are accessible, relevant, clearly structured and appear trustworthy.</li>
+  <li><strong>Synthesis.</strong> It writes an answer from passages in those pages and cites some of them.</li>
+</ol>
+<p>So GEO has three jobs: be <strong>retrievable</strong> (indexed and crawlable), be <strong>selectable</strong> (clear, credible, on topic), and be <strong>quotable</strong> (contain short passages that answer the question on their own).</p>
+
+<h2 id="step-1-crawlable">Step 1: Make sure AI crawlers and search engines can reach you</h2>
+<ul>
+  <li><strong>Serve real HTML.</strong> Content rendered only by client-side JavaScript is harder for many crawlers to read. Static pages are ideal.</li>
+  <li><strong>Check robots.txt.</strong> Blocking bots such as <code>OAI-SearchBot</code>, <code>PerplexityBot</code> or <code>Googlebot</code> removes you from their answers. Decide deliberately.</li>
+  <li><strong>Submit a sitemap</strong> in Google Search Console and Bing Webmaster Tools. Both are free. Bing's index matters beyond Bing itself, because several AI products use it.</li>
+  <li><strong>Use IndexNow</strong> to notify Bing, Yandex and other participating engines the moment you publish or update a page. It is a free protocol and can run from a simple script on every deploy.</li>
+</ul>
+
+<h2 id="step-2-entity">Step 2: Make your entity unambiguous</h2>
+<p>AI models think in entities: this company, this founder, this product, this price. Help them:</p>
+<ul>
+  <li>Use the <strong>same name, description and facts</strong> everywhere: site, LinkedIn, directories, social profiles.</li>
+  <li>Add <strong>schema.org structured data</strong>: <code>Organization</code>, <code>Person</code> for the founder, <code>Product</code> or <code>Course</code> with price, <code>BlogPosting</code> for articles, <code>FAQPage</code> for real questions.</li>
+  <li>Link to your profiles with <code>sameAs</code>, and get mentioned on other credible sites in your niche. Third-party mentions are a strong trust signal for AI answers.</li>
+</ul>
+
+<!--cta-->
+
+<h2 id="step-3-quotable">Step 3: Write answers, not just pages</h2>
+<p>AI assistants quote passages, so write passages worth quoting:</p>
+<ul>
+  <li><strong>Lead with the answer.</strong> Put a direct, two-sentence answer right under each heading, then the detail.</li>
+  <li><strong>Phrase headings as real questions</strong> your audience asks: "How much does it cost to…", "What is the difference between…".</li>
+  <li><strong>Be specific.</strong> Numbers, steps, prices, time frames and named tools are more citable than general advice.</li>
+  <li><strong>Use lists and tables</strong> for comparisons and steps; they map cleanly onto how assistants summarize.</li>
+  <li><strong>Show who wrote it and when.</strong> Author name, credentials and a visible date help with trust and freshness.</li>
+  <li><strong>Cover one topic deeply per page</strong> and link related pages together, so the whole cluster signals expertise.</li>
+</ul>
+
+<h2 id="step-4-multilingual">Step 4: Win in more than one language</h2>
+<p>AI assistants answer in the user's language and prefer sources in that language when they exist. A properly localized page, not a machine-translated copy, connected with <code>hreflang</code> tags to its other-language versions, can be cited in markets where competitors only publish in English. This is exactly why this blog exists in <a href="../uk/">Ukrainian</a> as well as English.</p>
+
+<h2 id="step-5-measure">Step 5: Measure AI visibility</h2>
+<ul>
+  <li>Keep a list of 20 to 30 questions your customers ask and check monthly which sources ChatGPT, Perplexity, Gemini and Google AI answers cite.</li>
+  <li>Track referrals from AI domains in your analytics.</li>
+  <li>Watch Search Console and Bing Webmaster Tools for impressions on long, question-style queries; they are often the same prompts people type into assistants.</li>
+</ul>
+
+<h2 id="llms-txt">What about llms.txt?</h2>
+<p><code>llms.txt</code> is a proposed plain-text file at the root of a site that summarizes it for language models. It is cheap to add (this site has one), but treat it as a bonus rather than a ranking factor: no major search engine has confirmed using it. Sitemaps, structured data and clear pages do the heavy lifting.</p>
+
+<h2 id="geo-checklist">GEO checklist</h2>
+<ul class="checklist">
+  <li>Static or server-rendered HTML, fast on mobile</li>
+  <li>robots.txt allows the search and AI crawlers you want</li>
+  <li>Sitemap submitted to Google Search Console and Bing Webmaster Tools</li>
+  <li>IndexNow ping on every deploy</li>
+  <li>Organization, Person, Product or Course, BlogPosting and FAQ schema</li>
+  <li>Answer-first paragraphs under question-style headings</li>
+  <li>Visible author and date, consistent facts across the web</li>
+  <li>Localized versions connected with hreflang</li>
+  <li>Monthly AI citation check on your key questions</li>
+</ul>
+<p>In the Ship Index Grow program, week four is dedicated to exactly this: every participant leaves with a product that is indexed, structured and ready to be cited. If you are still at the idea stage, start with <a href="../build-and-launch-a-product-with-ai/">the six-week launch playbook</a>.</p>

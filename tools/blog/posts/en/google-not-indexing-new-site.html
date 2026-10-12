@@ -1,0 +1,75 @@
+<!--
+{
+  "title": "Why Google Isn't Indexing Your New Site, and How to Fix It",
+  "seo_title": "Google Not Indexing Your New Site? Causes and Fixes (2026)",
+  "description": "New website not showing in Google? What 'Discovered' and 'Crawled – currently not indexed' mean in Search Console, the common causes, and a free step-by-step fix.",
+  "lead": "You launched, searched for your own site and found nothing. For a new domain this is normal for a while, but often something on the site is quietly blocking indexing. Here is how to tell which, using only free tools.",
+  "published": "2026-10-12",
+  "section": "SEO / GEO",
+  "order": 1,
+  "translation": "google-ne-indeksuie-sait",
+  "keywords": ["Google not indexing my site", "discovered currently not indexed", "crawled currently not indexed", "how to get indexed by Google", "new website not showing on Google", "Search Console indexing"],
+  "faq": [
+    ["How long does it take Google to index a new website?", "It varies from a few days to several weeks for a new domain. Submitting a sitemap in Search Console, requesting indexing for key pages and getting a few links from other sites usually speeds it up."],
+    ["What does 'Discovered – currently not indexed' mean?", "Google knows the URL exists but has not crawled it yet, often because the site is new, has little authority or many low-value URLs. Strengthen internal links to the page, improve its content and give it time."],
+    ["What does 'Crawled – currently not indexed' mean?", "Google fetched the page and decided not to include it for now. This usually points to thin, duplicate or unclear content. Make the page more useful and distinct, then request indexing again."],
+    ["Does submitting a sitemap guarantee indexing?", "No. A sitemap helps Google find your pages, but Google decides what to index based on quality and usefulness. Indexing is earned, not requested."]
+  ]
+}
+-->
+<p>"Why is my site not on Google?" is one of the most frequent questions from first-time founders. Sometimes the answer is simply "give it time". Often, though, a single technical setting or thin content is the real reason. The free Google Search Console tells you which one it is.</p>
+
+<h2 id="check-first">First, check whether you are indexed at all</h2>
+<ul>
+  <li>Search Google for <code>site:yourdomain.com</code>. It shows a rough sample of indexed pages.</li>
+  <li>Add your site to <strong>Google Search Console</strong> (free) and verify it. Use the URL Inspection tool on your home page: it states whether the URL is on Google and why not.</li>
+  <li>Open the <strong>Pages</strong> report under Indexing. It lists every reason pages are excluded.</li>
+</ul>
+
+<h2 id="blocking-mistakes">The technical mistakes that block indexing</h2>
+<p>Check these first, because each one can hide an entire site:</p>
+<ol>
+  <li><strong>A <code>noindex</code> tag left over from development.</strong> Look for <code>&lt;meta name="robots" content="noindex"&gt;</code> in the page source or an <code>X-Robots-Tag</code> header. Some site builders add it to staging or preview builds.</li>
+  <li><strong>robots.txt blocking everything.</strong> A line <code>Disallow: /</code> under <code>User-agent: *</code> stops crawling of the whole site.</li>
+  <li><strong>Wrong canonical tags.</strong> If every page's canonical points to the home page or to a preview domain, Google will index only that URL.</li>
+  <li><strong>Content only visible after JavaScript.</strong> If the raw HTML is nearly empty, crawling and indexing are slower and less reliable. Static or server-rendered pages are safest.</li>
+  <li><strong>Several addresses for the same page.</strong> <code>www</code> and non-<code>www</code>, <code>http</code> and <code>https</code>, with and without a trailing slash. Pick one and redirect the rest.</li>
+  <li><strong>Password protection or a "coming soon" wall</strong> on the production domain.</li>
+</ol>
+
+<!--cta-->
+
+<h2 id="report-statuses">What the Search Console statuses mean</h2>
+<ul>
+  <li><strong>Discovered – currently not indexed:</strong> Google knows the URL but has not crawled it. Common for new sites. Link to the page from your home page and other pages, and be patient.</li>
+  <li><strong>Crawled – currently not indexed:</strong> Google visited and decided the page is not worth indexing yet. Make it more useful and distinct.</li>
+  <li><strong>Duplicate without user-selected canonical:</strong> Google sees several similar pages. Set canonical tags and merge near-duplicates.</li>
+  <li><strong>Excluded by 'noindex' tag</strong> or <strong>Blocked by robots.txt:</strong> a setting on your site. Fix it, then click "Validate fix".</li>
+</ul>
+
+<h2 id="speed-up">How to speed up indexing for free</h2>
+<ol>
+  <li><strong>Submit your sitemap</strong> in Search Console and in Bing Webmaster Tools. Bing's index also feeds several AI assistants.</li>
+  <li><strong>Request indexing</strong> for your most important pages with URL Inspection. Do it for key pages, not hundreds.</li>
+  <li><strong>Use IndexNow</strong> to notify Bing and other participating engines on every update. It is free and can run automatically on each deploy.</li>
+  <li><strong>Link internally.</strong> Every important page should be reachable from the home page within a click or two.</li>
+  <li><strong>Earn a few real links and mentions:</strong> your LinkedIn profile, a launch post, a directory listing, a guest article, a community answer.</li>
+  <li><strong>Publish pages worth indexing.</strong> A page that clearly answers a real question in your niche gets indexed faster than a generic "About us".</li>
+</ol>
+
+<h2 id="quality">When the problem is the content</h2>
+<p>If the technical checks pass and pages still are not indexed after a few weeks, Google usually does not see enough value yet. Typical causes are very short pages, pages that repeat what thousands of others say, and AI-generated text published at volume without review. Fewer, better pages beat many thin ones. Add specifics only you can provide: your process, your numbers, your examples, your opinion.</p>
+
+<h2 id="checklist">Indexing checklist</h2>
+<ul class="checklist">
+  <li>Search Console and Bing Webmaster Tools verified, sitemap submitted</li>
+  <li>No stray noindex tags or headers</li>
+  <li>robots.txt allows crawling</li>
+  <li>Correct self-referencing canonical on every page</li>
+  <li>Content present in the HTML without JavaScript</li>
+  <li>One address per page, other variants redirected</li>
+  <li>Key pages linked from the home page</li>
+  <li>A few external links or mentions</li>
+  <li>IndexNow ping on every deploy</li>
+</ul>
+<p>Indexing is week four of the Ship Index Grow program, together with <a href="../geo-get-cited-by-ai-search/">GEO for AI search</a>. Once you are indexed, the next job is <a href="../first-100-users-after-launch/">getting your first 100 users</a>.</p>
