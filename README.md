@@ -8,8 +8,10 @@ Production: https://shipindexgrow.top/
 
 Production hosting is GitHub Pages, served at the custom domain in `CNAME`.
 Vercel is no longer used. A Vercel commit status is not proof of production publication.
-After merging changes to `main`, check the **pages build and deployment** workflow and
-verify the updated content on https://shipindexgrow.top/ before reporting it live.
+Develop changes in `main`, then merge them into `github-pages-pilot` to publish.
+The `github-pages` environment permits deployments from `github-pages-pilot` only.
+Check the **pages build and deployment** workflow for that release commit and verify
+the updated content on https://shipindexgrow.top/ before reporting it live.
 Keep the existing custom domain and DNS settings unchanged.
 
 The homepage offer lives directly below the headline in `index.html` and `uk.html`,
