@@ -4,6 +4,20 @@ AI-native product launch school.
 
 Production: https://shipindexgrow.top/
 
+## Hosting and publication
+
+Production hosting is GitHub Pages, served at the custom domain in `CNAME`.
+Vercel is no longer used. A Vercel commit status is not proof of production publication.
+Develop changes in `main`, then merge them into `github-pages-pilot` to publish.
+The `github-pages` environment permits deployments from `github-pages-pilot` only.
+Check the **pages build and deployment** workflow for that release commit and verify
+the updated content on https://shipindexgrow.top/ before reporting it live.
+Keep the existing custom domain and DNS settings unchanged.
+
+The homepage offer lives directly below the headline in `index.html` and `uk.html`,
+with shared responsive styles in `styles.css`. Keep both language versions and their
+course prices consistent with the existing enrollment form.
+
 ## Blog
 
 Articles live in `tools/blog/posts/en/` and `tools/blog/posts/uk/`. Each file starts with a JSON
