@@ -5,6 +5,29 @@ document.addEventListener('click',event=>{const trigger=event.target.closest('.j
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
 
+// Telegram relay (Google Apps Script web app, see tools/telegram-leads).
+// Leave empty to send join requests by email only.
+const TELEGRAM_RELAY_URL='';
+
+async function postJson(url,payload,headers){
+  const response=await fetch(url,{method:'POST',headers,body:JSON.stringify(payload)});
+  return {response,result:await response.json().catch(()=>({}))};
+}
+async function sendLead(payload){
+  if(TELEGRAM_RELAY_URL){
+    try{
+      // text/plain keeps this a simple request, which Apps Script accepts cross-origin.
+      const {response,result}=await postJson(TELEGRAM_RELAY_URL,payload,{'Content-Type':'text/plain;charset=utf-8'});
+      if(response.ok&&result.ok===true)return;
+      throw new Error(result.error||'Telegram relay failed');
+    }catch(error){
+      console.warn('Telegram lead delivery failed, using email fallback',error);
+    }
+  }
+  const {response,result}=await postJson('https://formsubmit.co/ajax/doctorgebel@gmail.com',payload,{'Content-Type':'application/json','Accept':'application/json'});
+  if(!response.ok||result.success!==true&&result.success!=='true')throw new Error(result.message||'Request failed');
+}
+
 form.addEventListener('submit',async event=>{
   event.preventDefault();
   const submit=form.querySelector('button[type="submit"]');
@@ -13,13 +36,7 @@ form.addEventListener('submit',async event=>{
   try{
     const payload=Object.fromEntries(new FormData(form));
     payload._url=window.location.href;
-    const response=await fetch('https://formsubmit.co/ajax/doctorgebel@gmail.com',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(payload)
-    });
-    const result=await response.json();
-    if(!response.ok||result.success!==true&&result.success!=='true')throw new Error(result.message||'Request failed');
+    await sendLead(payload);
     form.reset();
     status.textContent=uk?'Заявку надіслано. Напишемо на твою пошту з датами та наступним кроком.':'Request sent. We’ll email you with the cohort dates and next step.';
   }catch(error){
