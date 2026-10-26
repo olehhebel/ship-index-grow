@@ -51,7 +51,7 @@ nohup "$CHROME" \
   --no-default-browser-check \
   "https://shipindexgrow.top" \
   "https://interfacereport.com" \
-  "https://superprompt.pro" \
+  "https://olehhebel.top" \
   "https://ridne.store" \
   >"$LOG_DIR/chrome.log" 2>&1 &
 

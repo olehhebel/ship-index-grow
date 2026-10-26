@@ -24,7 +24,7 @@ The sandbox publishes two ports:
 The browser opens the four project tabs on startup:
 - https://shipindexgrow.top
 - https://interfacereport.com
-- https://superprompt.pro
+- https://olehhebel.top
 - https://ridne.store
 
 ## Provisioning
