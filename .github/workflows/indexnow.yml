@@ -23,11 +23,11 @@ jobs:
         run: |
           python3 - <<'PY'
           import time, urllib.request, xml.etree.ElementTree as ET
-          expected = set(ET.parse("sitemap.xml").getroot().itertext())
+          expected = ET.canonicalize(from_file="sitemap.xml", strip_text=True)
           for attempt in range(20):
               try:
                   with urllib.request.urlopen("https://shipindexgrow.top/sitemap.xml", timeout=15) as res:
-                      live = set(ET.fromstring(res.read()).itertext())
+                      live = ET.canonicalize(xml_data=res.read().decode("utf-8"), strip_text=True)
                   if live == expected:
                       print("Published sitemap matches release")
                       break
