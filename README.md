@@ -32,5 +32,6 @@ python3 tools/blog/build.py
 ```
 
 It regenerates `blog/`, `blog/uk/`, both RSS feeds, `sitemap.xml` (with hreflang alternates) and
-the latest-posts block on the home pages. Commit the result. On push to `main`, the IndexNow
-workflow notifies Bing and other IndexNow search engines about every URL in the sitemap.
+the latest-posts block on the home pages. Commit the result. After changes reach `github-pages-pilot`, the IndexNow workflow waits until the public sitemap
+matches the release before notifying Bing and other IndexNow search engines. A matching sitemap
+does not prove every page has finished deploying, and IndexNow does not guarantee indexing.
