@@ -6,7 +6,7 @@ name: IndexNow
 
 on:
   push:
-    branches: [main]
+    branches: [github-pages-pilot]
     paths:
       - "sitemap.xml"
       - "blog/**"
@@ -19,8 +19,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Wait for GitHub Pages to publish
-        run: sleep 120
+      - name: Wait until the published sitemap matches this release
+        run: |
+          python3 - <<'PY'
+          import time, urllib.request, xml.etree.ElementTree as ET
+          expected = ET.canonicalize(from_file="sitemap.xml", strip_text=True)
+          for attempt in range(20):
+              try:
+                  with urllib.request.urlopen("https://shipindexgrow.top/sitemap.xml", timeout=15) as res:
+                      live = ET.canonicalize(xml_data=res.read().decode("utf-8"), strip_text=True)
+                  if live == expected:
+                      print("Published sitemap matches release")
+                      break
+              except Exception as exc:
+                  print(f"Waiting for published sitemap: {exc}")
+              time.sleep(30)
+          else:
+              raise SystemExit("Published sitemap did not match release; IndexNow not notified")
+          PY
       - name: Submit sitemap URLs to IndexNow
         run: |
           python3 - <<'PY'
