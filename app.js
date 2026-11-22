@@ -12,8 +12,13 @@ form.addEventListener('submit',async event=>{
   status.textContent=uk?'Надсилаємо заявку…':'Sending your join request…';
   try{
     const payload=Object.fromEntries(new FormData(form));
-    payload._url=window.location.href;
-    const response=await fetch('https://formsubmit.co/ajax/doctorgebel@gmail.com',{
+    delete payload._subject;
+    delete payload._captcha;
+    payload.access_key='54d405a9-39f1-41cc-8263-276e0ebaf3c6';
+    payload.subject='Ship Index Grow — course enrollment';
+    payload.from_name='Ship Index Grow';
+    payload.page=window.location.href;
+    const response=await fetch('https://api.web3forms.com/submit',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify(payload)
@@ -24,7 +29,7 @@ form.addEventListener('submit',async event=>{
     status.textContent=uk?'Заявку надіслано. Напишемо на твою пошту з датами та наступним кроком.':'Request sent. We’ll email you with the cohort dates and next step.';
   }catch(error){
     console.error('Join request failed',error);
-    status.textContent=uk?'Не вдалося надіслати. Напиши на doctorgebel@gmail.com.':'Could not send right now. Email doctorgebel@gmail.com directly.';
+    status.textContent=uk?'Не вдалося надіслати. Напиши на theolehhebel@gmail.com.':'Could not send right now. Email theolehhebel@gmail.com directly.';
   }finally{
     submit.disabled=false;
   }
