@@ -1,6 +1,15 @@
 const dialog=document.querySelector('#applyDialog');
 const uk=document.documentElement.lang==='uk';
 const form=document.querySelector('#leadForm');const status=document.querySelector('.form-status');
+if (!uk) {
+  for (const button of document.querySelectorAll('button.js-open')) {
+    const link = document.createElement('a');
+    link.className = button.className.replace(/\bjs-open\b/, '').trim();
+    link.href = 'https://www.paypal.com/ncp/payment/9NMLUDSDL2A7L';
+    link.append(...button.childNodes);
+    button.replaceWith(link);
+  }
+}
 document.addEventListener('click',event=>{const trigger=event.target.closest('.js-open');if(!trigger)return;event.preventDefault();if(typeof dialog.showModal==='function'){if(!dialog.open)dialog.showModal()}else{dialog.setAttribute('open','')}});
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
